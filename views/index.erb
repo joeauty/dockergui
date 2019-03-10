@@ -1,0 +1,12 @@
+<table class="table">
+	<thead>
+		<tr>
+			<th>Container ID</th><th>Container State</th>
+		</tr>
+	</thead>
+	<% Docker::Container.all(:all => false).each do |c| %> 
+	<tr>
+		<td><%= c.json["Id"] %></td><td><%= c.json["State"] %></td>
+	</tr>
+	<% end %>
+</table>
